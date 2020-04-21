@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
-using BookStore_API.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,6 +16,8 @@ using System.Reflection;
 using System.IO;
 using BookStore_API.Contracts;
 using BookStore_API.Services;
+using AutoMapper;
+using BookStore_API.Mappings;
 
 namespace BookStore_API
 {
@@ -49,8 +50,10 @@ namespace BookStore_API
             services.AddEntityFrameworkNpgsql()
                 .AddDbContext<BookStoreContext>(
                     options => options.UseNpgsql(builder.ConnectionString));
-            //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-            //    .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<BookStoreContext>();
+
+            services.AddAutoMapper(typeof(Maps));
 
             services.AddSwaggerGen (c => 
             {
