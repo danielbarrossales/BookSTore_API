@@ -7,7 +7,7 @@ namespace BookStore_API.Dtos
 {
     public class BookDto
     {
-        public ulong Id { get; set; }
+        public long Id { get; set; }
         public uint? Year { get; set; }
         public string ISBN { get; set; }
         public string Summary { get; set; }

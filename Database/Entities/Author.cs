@@ -11,7 +11,8 @@ namespace BookStore_API.Database.Entities
     [Table("Authors")]
     public partial class Author
     {
-        public ulong Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public long Id { get; set; }
 
         [Required]
         [MaxLength(50)]

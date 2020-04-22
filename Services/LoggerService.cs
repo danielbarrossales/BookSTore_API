@@ -22,7 +22,7 @@ namespace BookStore_API.Services
 
         public void LogInfo(string message)
         {
-            logger.Debug(message);
+            logger.Info(message);
         }
 
         public void LogWarn(string message)

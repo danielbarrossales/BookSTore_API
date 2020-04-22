@@ -10,7 +10,8 @@ namespace BookStore_API.Database.Entities
     [Table("Books")]
     public class Book
     {
-        public ulong Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public long Id { get; set; }
 
         [Required]
         public uint? Year { get; set; }
