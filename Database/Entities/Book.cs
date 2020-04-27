@@ -14,24 +14,26 @@ namespace BookStore_API.Database.Entities
         public long Id { get; set; }
 
         [Required]
+        public string Title { get; set; }
+
         public uint? Year { get; set; }
 
         [Required]
         [MaxLength(50)]
         public string ISBN { get; set; }
 
-        [Required]
+        [MaxLength(500)]
         public string Summary { get; set; }
 
-        [Required]
         [MaxLength(150)]
         public string Image { get; set; }
 
-        [Required]
         [Column(TypeName="money")]
         public decimal? Price { get; set; }
         
-        [Required]
+        [ForeignKey("AuthorId")]
         public Author Author { get; set; }
+        [Required]
+        public long AuthorId { get; set; }
     }
 }

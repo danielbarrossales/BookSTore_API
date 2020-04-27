@@ -1,20 +1,17 @@
 ﻿using BookStore_API.Contracts;
 using BookStore_API.Database.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace BookStore_API.Services
 {
-    public class AuthorRepository : IAuthorRepository
-    {
-        private readonly BookStoreContext _db;
-
-        public AuthorRepository(BookStoreContext db)
+    public class AuthorRepository : BaseRepository, IAuthorRepository
+    { 
+        
+        public AuthorRepository(BookStoreContext db) : base (db)
         {
-            _db = db;
+            
         }
 
         public async Task<bool> Create(Author entity)

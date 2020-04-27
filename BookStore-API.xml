@@ -26,7 +26,7 @@
             <summary>
             Create An Author 
             </summary>
-            <param name="author"></param>
+            <param name="authorDto"></param>
             <returns></returns>
         </member>
         <member name="M:BookStore_API.Controllers.AuthorsController.UpdateAuthor(System.Int64,BookStore_API.Dtos.CreateAuthorDto)">
@@ -35,6 +35,39 @@
             </summary>
             <param name="id">Id of author to be updated</param>
             <param name="authorDto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BookStore_API.Controllers.BooksController">
+            <summary>
+            Endpoint used to interact with the books in the Book Store database
+            </summary>
+        </member>
+        <member name="M:BookStore_API.Controllers.BooksController.GetBooks">
+            <summary>
+            Get All Books
+            </summary>
+            <returns>List of Authors</returns>
+        </member>
+        <member name="M:BookStore_API.Controllers.BooksController.GetBook(System.Int32)">
+            <summary>
+            Get Book by Id
+            </summary>
+            <param name="id"></param>
+            <returns>The books record</returns>
+        </member>
+        <member name="M:BookStore_API.Controllers.BooksController.Create(BookStore_API.Dtos.CreateBookDto)">
+            <summary>
+            Creates a new Book 
+            </summary>
+            <param name="bookDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore_API.Controllers.BooksController.Update(System.Int64,BookStore_API.Dtos.UpdateBookDto)">
+            <summary>
+            Updates Book
+            </summary>
+            <param name="id">Id of book to be updated</param>
+            <param name="bookDto"></param>
             <returns></returns>
         </member>
         <member name="T:BookStore_API.Controllers.HomeController">
